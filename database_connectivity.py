@@ -49,3 +49,4 @@ def DataSearch(game):
     cursor.close()
     db.close()
     return cursor.fetchone()[1]
+
