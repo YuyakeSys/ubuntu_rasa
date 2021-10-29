@@ -1,0 +1,152 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: tell_gamebox
+  examples: |
+    - can you tell me something about gamebox?
+    - what are different types of gamebox?
+    - what are the parameters of gamebox?
+    - Information of gamebox?
+
+- intent: tell_subscription
+  examples: |
+    - can you tell me something about plan?
+    - may i subscribe my plan
+    - can you help me with my subscription?
+    - Information of plan?
+
+- intent: my_account
+  examples: |
+    - my account is [CCC]{"entity":"account","value":"CCC"}
+    - my account is [melo]{"entity":"account","value":"melo"}
+    - my account is [AME]{"entity":"account","value":"AME"}
+    - [bocai8]{"entity":"account","value":"bocai8"} is my account
+    - [yatoro]{"entity":"account","value":"yatoro"} this side
+    - i am [Kasee]{"entity":"account","value":"Kasee"}
+
+- intent: my_plan
+  examples: |
+    - i want [monthly]{"entity":"plan"} plan
+    - i want [seasonly]{"entity":"plan"} plan
+    - [lifetime]{"entity":"plan"} plan i prefer
+    - i would like the [monthly]{"entity":"plan"} plan
+
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 1 + 1?
+    - Liu ying yyds
+    - can i buy a TV
+    - Have you had lunch?
+    - I hate these games
+
+- intent: chitchat/ask_help
+  examples: |
+    - Why my game is lagging?
+    - I can not start my game
+    - my game quit suddenly
+    - i can not log in
+
+- intent: chitchat/ask_location
+  examples: |
+    - What is your company's location?
+    - Where is your company?
+    - where are you?
+    - May i visit your company?
+
+- intent: ask_game
+  examples: |
+    - May i know the information about [GTA5]{"entity":"game", "value":"GTA5"}
+    - Can you tell me something about [GTA5]{"entity":"game", "value":"GTA5"}
+    - What is the price of [FIFA2021]{"entity":"game","value":"FIFA2021"}
+    - Can you tell me something about [AC2]{"entity":"game","value":"AC2"}

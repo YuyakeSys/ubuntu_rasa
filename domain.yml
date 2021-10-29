@@ -1,0 +1,113 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- tell_gamebox:
+    use_entities: true
+- tell_subscription:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- chitchat:
+    use_entities: true
+- my_account:
+    use_entities: true
+- my_plan:
+    use_entities: true
+- ask_game:
+    use_entities: true
+entities:
+- account
+- plan
+- game
+slots:
+  account:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  plan:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  game:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_chitchat/ask_help:
+  - text: You can try to restart your game.
+  - text: You can try to restart your GameBox.
+  - text: You can contact our human service by +86 1345667890.
+  utter_chitchat/ask_location:
+  - text: NJIT.
+  - text: We are located in Nanjing.
+  - text: I'm in Nanjing xxx.
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_gamebox:
+  - text: 'GameBox performance level: 2'
+  utter_subcription:
+  - text: Sure, monthly plan costs $5, seasonly will have 5% off, lifetime plan will have some freebies which you can check out one game platform.
+  utter_ask_account:
+  - text: What is your account?
+  utter_ask_plan:
+  - text: Which plan do you prefer?
+  utter_thanks:
+  - text: Thanks for your providing the information
+  utter_details_thanks:
+  - text: |-
+      Thanks for your providing the information
+      Account: {Account},
+      Plan: {Plan}
+  utter_details_game:
+  - text: 'Game: {Game}: Price: {Price}'
+  utter_out_of_scope:
+  - text: Sorry, I didn't get what you said. Please rephrase what you said.
+actions:
+- action_submit
+- action_name
+forms:
+  user_details_form:
+    account:
+    - entity: account
+      type: from_entity
+    plan:
+    - entity: plan
+      type: from_entity
+e2e_actions: []

@@ -1,0 +1,64 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: happy gamebox path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: tell_gamebox
+  - action: utter_gamebox
+
+- story: happy game info
+  steps:
+  - intent: ask_game
+    entities:
+    - game: "GTA5"
+  - slot_was_set:
+      - game: "GTA5"
+  - action: action_name
+
+#- story: happy account path
+#  steps:
+#  - intent: tell_subscription
+#  - action: utter_subscription
+#  - action: utter_my_account
+#  - intent: my_account
+#    entities:
+#    - account: "CCC"
+#  - slot_was_set:
+#      - account: "CCC"
+#  - action: utter_my_plan
+#  - intent: my_plan
+#    entities:
+#    - plan: "monthly"
+#  - slot_was_set:
+#      - plan: "monthly"
+#  - action: utter_thanks
