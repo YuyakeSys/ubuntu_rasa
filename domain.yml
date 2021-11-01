@@ -81,7 +81,7 @@ responses:
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_gamebox:
-  - text: 'GameBox performance level: 2'
+  - text: 'GameBox performance level: 2\n, o GameBox X, GameBox XSGameBox Pro XS'
   utter_subcription:
   - text: Sure, monthly plan costs $5, seasonly will have 5% off, lifetime plan will have some freebies which you can check out one game platform.
   utter_ask_account:
