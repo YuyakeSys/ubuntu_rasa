@@ -135,7 +135,7 @@ nlu:
     - Can you tell me something about [GTA5](game)
     - What is the price of [FIFA2021](game)
     - Can you tell me something about [AC2](game)
-- intent: ask_insturction
+- intent: ask_instruction
   examples: |
     - Help
     - Can you give me instructions?
