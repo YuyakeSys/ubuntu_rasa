@@ -33,7 +33,7 @@ intents:
     use_entities: true
 - ask_game:
     use_entities: true
-- ask_insturction:
+- ask_instruction:
     use_entities: true
 entities:
 - account
