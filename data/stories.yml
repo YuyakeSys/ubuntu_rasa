@@ -45,6 +45,10 @@ stories:
       - game: "GTA5"
   - action: action_name
 
+- story: instruction
+  steps:
+    - intent: ask_instruction
+    - action: utter_instruction
 #- story: happy account path
 #  steps:
 #  - intent: tell_subscription

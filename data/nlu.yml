@@ -150,3 +150,10 @@ nlu:
     - Can you tell me something about [GTA5]{"entity":"game", "value":"GTA5"}
     - What is the price of [FIFA2021]{"entity":"game","value":"FIFA2021"}
     - Can you tell me something about [AC2]{"entity":"game","value":"AC2"}
+
+- intent: ask_instruction
+  examples: |
+    - Help
+    - Can you give me instructions?
+    - Can you tell me how to interact with you?
+    - Can you introduce yourself?

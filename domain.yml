@@ -33,6 +33,8 @@ intents:
     use_entities: true
 - ask_game:
     use_entities: true
+- ask_instruction:
+    use_entities: true
 entities:
 - account
 - plan
@@ -81,9 +83,9 @@ responses:
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_gamebox:
-  - text: 'GameBox performance level: 2'
+  - text: "GameBox X performance level: 3,\n GameBox XS performance level:2,\n Gamebox Pro XS performance level:8"
   utter_subcription:
-  - text: Sure, monthly plan costs $5, seasonly will have 5% off, lifetime plan will have some freebies which you can check out one game platform.
+  - text: Sure, monthly plan costs $5, seasonly will have 5% off, lifetime plan will have 20% off with some freebies which you can check out one game platform.
   utter_ask_account:
   - text: What is your account?
   utter_ask_plan:
@@ -99,6 +101,9 @@ responses:
   - text: 'Game: {Game}: Price: {Price}'
   utter_out_of_scope:
   - text: Sorry, I didn't get what you said. Please rephrase what you said.
+  utter_instruction:
+  - text: Hello, i'm your Game guide Simon.\nHere is some insruction.\nSay something like tell me about gamebox to know the information of gambox,\nSay may i subscribe to get instructions for subsribe.
+
 actions:
 - action_submit
 - action_name

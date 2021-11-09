@@ -50,3 +50,6 @@ def DataSearch(game):
     db.close()
     return cursor.fetchone()[1]
 
+
+if __name__=="__main__":
+    print(DataSearch("GTA5"))
