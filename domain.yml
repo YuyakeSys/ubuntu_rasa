@@ -33,8 +33,6 @@ intents:
     use_entities: true
 - ask_game:
     use_entities: true
-#- ask_instruction:
-#    use_entities: true
 entities:
 - account
 - plan
@@ -101,8 +99,6 @@ responses:
   - text: 'Game: {Game}: Price: {Price}'
   utter_out_of_scope:
   - text: Sorry, I didn't get what you said. Please rephrase what you said.
-#  utter_instruction:
-#  - text: Hello, I'm your Game guide Simon.\nHere is some instruction.\nSay something like tells me about gamebox to know the information of GambBx,\nSay may I subscribe to get instructions for subscribe.
 actions:
 - action_submit
 - action_name
