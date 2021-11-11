@@ -31,8 +31,6 @@ stories:
 
 - story: happy gamebox path
   steps:
-  - intent: greet
-  - action: utter_greet
   - intent: tell_gamebox
   - action: utter_gamebox
 
