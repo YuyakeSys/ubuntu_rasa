@@ -47,12 +47,12 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
-- rule: Activate form
-  steps:
-    - intent: tell_subscription
-    - action: utter_subcription
-    - action: user_details_form
-    - active_loop: user_details_form
+# - rule: Activate form
+#   steps:
+#     - intent: tell_subscription
+#     - action: utter_subcription
+#     - action: user_details_form
+#     - active_loop: user_details_form
 
 #- rule: Submit form2
 #  condition:
