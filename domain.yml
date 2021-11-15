@@ -35,6 +35,10 @@ intents:
     use_entities: true
 - ask_instruction:
     use_entities: true
+- ask_check_plan:
+    use_entities: true
+- ask_plan:
+    use_entities: true
 entities:
 - account
 - plan
@@ -102,6 +106,8 @@ responses:
       Plan: {Plan}
   utter_details_game:
   - text: 'Game: {Game}: Price: {Price}'
+  utter_details_plan:
+    - text: 'Your plan status : {Plan}'
   utter_out_of_scope:
   - text: Sorry, I didn't get what you said. Please rephrase what you said.
   utter_instruction:
@@ -111,6 +117,7 @@ responses:
 actions:
 - action_submit
 - action_name
+- action_plan
 forms:
   user_details_form:
     account:

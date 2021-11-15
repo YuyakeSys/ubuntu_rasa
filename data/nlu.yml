@@ -167,7 +167,7 @@ nlu:
 
 -  intent: ask_check_plan
    examples: |
-     - Check plan status of[AME]{"entity":"account","value":"AME"}.
+     - Check plan status of [AME]{"entity":"account","value":"AME"}.
      - Check plan status of [Topson]{"entity":"account","value":"Topson"}.
      - What's the plan of [AME]{"entity":"account","value":"AME"}?
      - Plan status of [AME]{"entity":"account","value":"AME"}?
