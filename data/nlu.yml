@@ -112,7 +112,7 @@ nlu:
     - my account is [AME]{"entity":"account","value":"AME"}
     - [bocai8]{"entity":"account","value":"bocai8"} is my account
     - [yatoro]{"entity":"account","value":"yatoro"} this side
-    - i am [Kasee]{"entity":"account","value":"Kasee"}
+    - i am [Topson]{"entity":"account","value":"Topson"}
 
 - intent: my_plan
   examples: |
@@ -149,7 +149,7 @@ nlu:
     - May i know the information about [GTA5]{"entity":"game", "value":"GTA5"}
     - Can you tell me something about [GTA5]{"entity":"game", "value":"GTA5"}
     - What is the price of [FIFA2021]{"entity":"game","value":"FIFA2021"}
-    - Can you tell me something about [AC2]{"entity":"game","value":"AC2"}
+    - Can you tell me something about [OldRoll]{"entity":"game","value":"OldRoll"}
 
 - intent: ask_instruction
   examples: |
@@ -168,7 +168,8 @@ nlu:
 -  intent: ask_check_plan
    examples: |
      - Check plan status of[AME]{"entity":"account","value":"AME"}.
-     - Check plan status of [CCC]{"entity":"account","value":"CCC"}.
+     - Check plan status of [Topson]{"entity":"account","value":"Topson"}.
      - What's the plan of [AME]{"entity":"account","value":"AME"}?
      - Plan status of [AME]{"entity":"account","value":"AME"}?
      - May i check the status of [MELO]{"entity":"account","value":"MELO"}?
+     - May i check the status of [QQQ]{"entity":"account","value":"QQQ"}?
