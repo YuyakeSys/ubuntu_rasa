@@ -43,6 +43,17 @@ stories:
       - game: "GTA5"
   - action: action_name
 
+- story: unhappy check plan info
+  steps:
+  - intent: ask_plan
+  - action: utter_ask_account
+  - intent: my_account
+    entities:
+    - account: "AME"
+  - slot_was_set:
+     - account: "AME"
+  - action: action_plan
+
 # - story: instruction
 #   steps:
 #     - intent: ask_instruction

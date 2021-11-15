@@ -3,7 +3,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet, EventType
 from rasa_sdk.executor import CollectingDispatcher
-from database_connectivity import DataUpdate, DataSearch
+from database_connectivity import DataUpdate, DataSearch, DataSearchplan
 
 class ValidateRestaurantForm(Action):
      def name(self) -> Text:
@@ -50,3 +50,16 @@ class ActionGame(Action):
         dispatcher.utter_message(template="utter_details_game",
                                  Game=tracker.get_slot("game"),
                                  Price=DataSearch(tracker.get_slot("game")))
+
+class ActionPlan(Action):
+    def name(self) -> Text:
+        return "action_plan"
+
+    def run(
+        self,
+        dispatcher: "CollectingDispatcher",
+        tracker: Tracker,
+        domain: "DomainDict",
+    ) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(template="utter_details_plan",
+                                 Plan=DataSearchplan(tracker.get_slot("account")))

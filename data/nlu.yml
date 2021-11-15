@@ -157,3 +157,18 @@ nlu:
     - Can you give me instructions?
     - Can you tell me how to interact with you?
     - Can you introduce yourself?
+
+-  intent: ask_plan
+   examples: |
+     - Check plan status.
+     - May i check my plan status.
+     - May i check my plan?
+     - Could i get my plan information?
+
+-  intent: ask_check_plan
+   examples: |
+     - Check plan status of[AME]{"entity":"account","value":"AME"}.
+     - Check plan status of [CCC]{"entity":"account","value":"CCC"}.
+     - What's the plan of [AME]{"entity":"account","value":"AME"}?
+     - Plan status of [AME]{"entity":"account","value":"AME"}?
+     - May i check the status of [MELO]{"entity":"account","value":"MELO"}?

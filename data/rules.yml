@@ -2,7 +2,7 @@ version: "2.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says help
+- rule: Say instruction anytime the user says help
   steps:
   - intent: ask_instruction
   - action: utter_instruction
@@ -11,6 +11,7 @@ rules:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+  - action: action_restart
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
@@ -47,6 +48,23 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
+- rule: ask game info
+  steps:
+  - intent: ask_game
+    entities:
+    - game: "GTA5"
+  - slot_was_set:
+      - game: "GTA5"
+  - action: action_name
+
+- rule: check plan info
+  steps:
+  - intent: ask_check_plan
+    entities:
+    - account: "CCC"
+  - slot_was_set:
+     - account: "CCC"
+  - action: action_plan
 # - rule: Activate form
 #   steps:
 #     - intent: tell_subscription

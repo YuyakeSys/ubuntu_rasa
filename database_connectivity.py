@@ -10,14 +10,12 @@ def DataUpdate(account, plan):
     db = pymysql.connect(
         host='localhost',
         port=3306,
-        user='root',
-        password='123456',
+        user='mzy',
+        password='Mzy@123',
         database='rasa_plan_data',
-        charset='utf8'
     )
 
     cursor = db.cursor()
-    check_sql = 'select * from accoun_plan'
     sql = "update account_plan set plan_info = %s where account= %s"
     try:
         cursor.execute(sql, [account, plan])
@@ -33,10 +31,9 @@ def DataSearch(game):
     db = pymysql.connect(
         host='localhost',
         port=3306,
-        user='root',
-        password='123456',
+        user='mzy',
+        password='Njit@123',
         database='rasa_plan_data',
-        charset='utf8'
     )
 
     cursor = db.cursor()
@@ -49,4 +46,26 @@ def DataSearch(game):
     cursor.close()
     db.close()
     return cursor.fetchone()[1]
+
+def DataSearchplan(account):
+    db = pymysql.connect(
+        host='localhost',
+        port=3306,
+        user='mzy',
+        password='Mzy@123',
+        database='rasa_plan_data',
+    )
+
+    cursor = db.cursor()
+    sql = "select plan_info from account_plan where account= %s"
+    try:
+        cursor.execute(sql, account)
+        db.commit()
+        return cursor.fetchone()[0]
+    except Exception as e:
+        db.rollback()
+    cursor.close()
+    db.close()
+
+
 
