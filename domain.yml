@@ -3,7 +3,7 @@ config:
   store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false
 intents:
 - greet:
     use_entities: true
@@ -34,10 +34,6 @@ intents:
 - ask_game:
     use_entities: true
 - ask_instruction:
-    use_entities: true
-- ask_plan:
-    use_entities: true
-- ask_check_plan:
     use_entities: true
 entities:
 - account
@@ -85,10 +81,10 @@ responses:
   utter_goodbye:
   - text: Bye
   utter_iamabot:
-  - text: I am a bot, powered by Rasa and GameBox .Co.
+  - text: I am a bot, powered by Rasa.
   utter_gamebox:
   - text: |-
-       GameBox X performance level: 3,
+      GameBox X performance level: 3,
        GameBox XS performance level:2,
        Gamebox Pro XS performance level:8
   utter_subcription:
@@ -99,28 +95,22 @@ responses:
   - text: Which plan do you prefer?
   utter_thanks:
   - text: Thanks for your providing the information
-  utter_details_plan:
-  - text: 'Your plan status is: {Plan} plan.'
+  utter_details_thanks:
+  - text: |-
+      Thanks for your providing the information
+      Account: {Account},
+      Plan: {Plan}
   utter_details_game:
-    - text: |-
-
-  utter_details_game:
-  - text: 'Game: {Game}; Price: {Price}'
+  - text: 'Game: {Game}: Price: {Price}'
   utter_out_of_scope:
   - text: Sorry, I didn't get what you said. Please rephrase what you said.
   utter_instruction:
-  - text: |-
-       Hello, i'm your Game guide Simon. Here is some instruction.
-       Say something like tell me about GameBox to know the information of GameBbox,
-       Say may i subscribe to get instructions for subscribe.
-       Say search plan information to check your plan status.
-       Say may i check my plan status to get your plan status.
+  - text: Hello, i'm your Game guide Simon.\nHere is some insruction.\nSay something like tell me about gamebox to know the information of gambox,\nSay may i subscribe to get instructions for subsribe. Say check my plan status of your account to check your status.
   utter_default:
   - text: Sorry I didn't get that. Can you rephrase?
 actions:
 - action_submit
 - action_name
-- action_plan
 forms:
   user_details_form:
     account:
