@@ -173,3 +173,11 @@ nlu:
      - Plan status of [AME]{"entity":"account","value":"AME"}?
      - May i check the status of [MELO]{"entity":"account","value":"MELO"}?
      - May i check the status of [QQQ]{"entity":"account","value":"QQQ"}?
+
+- intent: say_feedback
+  examples: |
+    - low{"entity":"feedback"}
+    - poor{"entity":"feedback"}
+    - medium{"entity":"feedback"}
+    - good{"entity":"feedback"}
+    - excellent{"entity":"feedback"}

@@ -39,10 +39,13 @@ intents:
     use_entities: true
 - ask_plan:
     use_entities: true
+- say_feedback:
+    use_entities: true
 entities:
 - account
 - plan
 - game
+- feedback
 slots:
   account:
     type: rasa.shared.core.slots.TextSlot
@@ -64,6 +67,11 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
+  feedback:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
 responses:
   utter_chitchat/ask_help:
   - text: You can try to restart your game.
@@ -107,23 +115,37 @@ responses:
   utter_details_game:
   - text: 'Game: {Game}: Price: {Price}'
   utter_details_plan:
-    - text: 'Your plan status : {Plan}'
+  - text: 'Your plan status : {Plan}'
   utter_out_of_scope:
   - text: Sorry, I didn't get what you said. Please rephrase what you said.
   utter_instruction:
-  - text: Hello, i'm your Game guide Simon.\nHere is some insruction.\nSay something like tell me about gamebox to know the information of gambox,\nSay may i subscribe to get instructions for subsribe. Say check my plan status of your account to check your status.
+  - text: Hello, i'm your Game guide Simon. Here is some insruction. Say something like tell me about gamebox to know the information of gambox, Say may i subscribe to get instructions for subsribe.  Say check my plan status of your account to check your status.
   utter_default:
   - text: Sorry I didn't get that. Can you rephrase?
+  utter_feedback:
+  - buttons:
+    - payload: /say_feedback{{"feedback":"poor"}}
+      title: poor
+    - payload: /say_feedback{{"feedback":"low"}}
+      title: low
+    - payload: /say_feedback{{"feedback":"medium"}}
+      title: medium
+    - payload: /say_feedback{{"feedback":"good"}}
+      title: good
+    - payload: /say_feedback{{"feedback":"excellent"}}
+      title: excellent
+    text: Give your feedback here please.
 actions:
 - action_submit
 - action_name
 - action_plan
 forms:
   user_details_form:
-    account:
-    - entity: account
-      type: from_entity
-    plan:
-    - entity: plan
-      type: from_entity
+    required_slots:
+      account:
+      - entity: account
+        type: from_entity
+      plan:
+      - entity: plan
+        type: from_entity
 e2e_actions: []

@@ -1,14 +1,11 @@
 version: "2.0"
-
 stories:
-
 - story: happy path
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
-
 - story: sad path 1
   steps:
   - intent: greet
@@ -18,7 +15,6 @@ stories:
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
-
 - story: sad path 2
   steps:
   - intent: greet
@@ -28,50 +24,118 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
-
 - story: happy gamebox path
   steps:
   - intent: tell_gamebox
   - action: utter_gamebox
-
 - story: happy game info
   steps:
   - intent: ask_game
     entities:
-    - game: "GTA5"
+    - game: GTA5
   - slot_was_set:
-      - game: "GTA5"
+    - game: GTA5
   - action: action_name
-
 - story: unhappy check plan info
   steps:
   - intent: ask_plan
   - action: utter_ask_account
   - intent: my_account
     entities:
-    - account: "AME"
+    - account: AME
   - slot_was_set:
-     - account: "AME"
+    - account: AME
   - action: action_plan
-
-# - story: instruction
-#   steps:
-#     - intent: ask_instruction
-#     - action: utter_instruction
-#- story: happy account path
-#  steps:
-#  - intent: tell_subscription
-#  - action: utter_subscription
-#  - action: utter_my_account
-#  - intent: my_account
-#    entities:
-#    - account: "CCC"
-#  - slot_was_set:
-#      - account: "CCC"
-#  - action: utter_my_plan
-#  - intent: my_plan
-#    entities:
-#    - plan: "monthly"
-#  - slot_was_set:
-#      - plan: "monthly"
-#  - action: utter_thanks
+- story: Say feedback anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_feedback
+  - intent: say_feedback
+    entities:
+    - feedback: medium
+  - slot_was_set:
+    - feedback: medium
+  - action: utter_thanks
+  - action: action_restart
+- story: Story from Conversation ID bf0f2a10ec9c46dc8d5dd216d83cedf4
+  steps:
+  - intent: goodbye
+  - action: utter_feedback
+  - intent: say_feedback
+    entities:
+    - feedback: low
+  - slot_was_set:
+    - feedback: medium
+  - action: utter_thanks
+  - action: action_restart
+- story: Story from Conversation ID 7e73317562984404969911e88eb5bc3f
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_feedback
+  - action: utter_thanks
+  - action: action_restart
+- story: Story from Conversation ID c0d5c846851c49a18fe5c2a72424488f
+  steps:
+  - intent: goodbye
+  - action: utter_feedback
+  - intent: say_feedback
+    entities:
+    - feedback: good
+  - slot_was_set:
+    - feedback: good
+  - action: utter_thanks
+  - action: action_restart
+- story: Story from Conversation ID fa998de302324277aae7ded66a86e2a0
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_feedback
+  - intent: say_feedback
+    entities:
+    - feedback: medium
+  - slot_was_set:
+    - feedback: medium
+  - action: utter_thanks
+  - action: action_restart
+- story: Story from Conversation ID 57ddb34c973f47a88eef94d433f3d095
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: tell_gamebox
+  - action: utter_gamebox
+- story: Story from Conversation ID 7cd689dc1e054996988e69c0b833c7ef
+  steps:
+  - intent: tell_gamebox
+  - action: utter_gamebox
+  - intent: ask_game
+    entities:
+    - game: OldRoll
+  - slot_was_set:
+    - game: OldRoll
+  - action: action_name
+  - intent: goodbye
+  - slot_was_set:
+    - game: OldRoll
+  - action: utter_feedback
+  - intent: say_feedback
+    entities:
+    - feedback: medium
+  - slot_was_set:
+    - feedback: medium
+  - action: utter_thanks
+  - action: action_restart
+- story: Story from Conversation ID 1cb2ee0079804c4ea7e096d5ed23ef97
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_plan
+  - action: utter_ask_account
+  - intent: my_account
+    entities:
+    - account: AME
+  - slot_was_set:
+    - account: AME
+  - action: action_plan

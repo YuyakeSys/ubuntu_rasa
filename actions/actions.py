@@ -3,7 +3,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet, EventType
 from rasa_sdk.executor import CollectingDispatcher
-from database_connectivity import DataUpdate, DataSearch, DataSearchplan
+from .database_connectivity import DataUpdate, DataSearch, DataSearchplan
 
 class ValidateRestaurantForm(Action):
      def name(self) -> Text:
