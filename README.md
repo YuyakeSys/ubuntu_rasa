@@ -1,8 +1,8 @@
 # ubuntu_rasa
-Local developing environment: i7-7700Khq GTX1060 6g 24G RAM 
-There are two ways for deploying: local mode and docker-compose
-Cloud Environment:  Ubuntu 20.04
-Local mode
+Local developing environment: i7-7700Khq GTX1060 6g 24G RAM \\
+There are two ways for deploying: local mode and docker-compose \\
+Cloud Environment:  Ubuntu 20.04\\
+Local mode\\
 1st Set up rasa, we recommend using virtual environment install venv and create the virtual environment. Then source ./venv/bin/activate
 Pip 3 install rasa
 pip3 install rasa-x --extra-index-url https://pypi.rasa.com/simple
